@@ -3,3 +3,4 @@
 set -eo pipefail
 
 rm ~/.zshrc
+rm -r ~/.config/kitty

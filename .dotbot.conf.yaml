@@ -4,3 +4,5 @@
 
 - link:
     ~/.zshrc: zshrc
+    ~/.config/kitty: kitty
+
