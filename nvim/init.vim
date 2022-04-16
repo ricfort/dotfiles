@@ -1,7 +1,8 @@
 "--------------------------------------------------------------------------
 " General settings
 "--------------------------------------------------------------------------
-
+let g:python3_host_prog = '/opt/homebrew/bin/python3'
+let g:pymode_python = 'python3'
 set expandtab
 set shiftwidth=4
 set tabstop=4
@@ -131,6 +132,8 @@ source ~/.config/nvim/plugins/vim-test.vim
 source ~/.config/nvim/plugins/visual-multi.vim
 source ~/.config/nvim/plugins/visual-star-search.vim
 source ~/.config/nvim/plugins/which-key.vim
+source ~/.config/nvim/plugins/jedi.vim
+source ~/.config/nvim/plugins/mypy.vim
 
 call plug#end()
 doautocmd User PlugLoaded

@@ -1,0 +1,1 @@
+Plug 'integralist/vim-mypy'
