@@ -59,7 +59,9 @@
 # Run road runner run
 # Plugins {{{
 # ==============================================================================
-
+source /opt/homebrew/share/antigen/antigen.zsh
+export PATH="$PATH:/opt/homebrew/bin"
+export PATH="$PATH:/usr/local/bin"
     # Load the Antibody plugin manager for zsh.
     source <(antibody init)
 
@@ -193,9 +195,9 @@
 # Interactive shell startup scripts {{{
 # ==============================================================================
 
-    if [[ $- == *i* && $0 == '/bin/zsh' ]]; then
-        ~/.dotfiles/scripts/login.sh
-    fi
+#    if [[ $- == *i* && $0 == '/bin/zsh' ]]; then
+#        ~/.dotfiles/scripts/login.sh
+#    fi
 
 # }}}
 
@@ -204,8 +206,7 @@
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # WIP 
-
-export PATH="$PATH:/opt/homebrew/bin/"
+export PATH="$PATH:/opt/homebrew/bin"
 eval "$(starship init zsh)"
 source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source ~/.zsh/completion.zsh
