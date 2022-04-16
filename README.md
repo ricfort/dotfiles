@@ -1,2 +1,2 @@
 # dotfiles
-Redoing my dotfiles, let's see how it goes
+Rebuilding my dotfiles, let's see how it goes
