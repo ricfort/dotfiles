@@ -1,2 +1,6 @@
+- clean: [
+    '~'
+] 
+
 - link:
     ~/.zshrc: zshrc
