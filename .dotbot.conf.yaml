@@ -4,5 +4,4 @@
 
 - link:
     ~/.zshrc: zshrc
-    ~/.config/kitty: kitty
-
+    ~/.hyper.js: hyper.js
