@@ -134,6 +134,7 @@ source ~/.config/nvim/plugins/visual-star-search.vim
 source ~/.config/nvim/plugins/which-key.vim
 source ~/.config/nvim/plugins/jedi.vim
 source ~/.config/nvim/plugins/mypy.vim
+source ~/.config/nvim/plugins/flake8.vim
 
 call plug#end()
 doautocmd User PlugLoaded
