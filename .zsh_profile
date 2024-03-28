@@ -1,5 +1,4 @@
 export DOTFILES=$HOME/Code/dotfiles
-path+=($HOME/.config/scripts)
-
+path+=($HOME/$XDG_CONFIG_HOME/scripts)
 alias search="tmux-sessionizer"
 

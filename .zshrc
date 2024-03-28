@@ -2,6 +2,7 @@ plugins=(zsh-autosuggestions git zsh-syntax-highlighting)
 
 # There is a little bit of junk in this file. It is still under construction with moving stuff to zsh_profile.
 export ZSH=$HOME/.oh-my-zsh
+export XDG_CONFIG_HOME=$HOME/.config
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export PATH=$HOME/bin:/usr/local/bin:$PATH

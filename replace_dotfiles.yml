@@ -4,6 +4,17 @@
   hosts: localhost
   gather_facts: yes
 
+  vars:
+    dirs_to_symlink:
+      - nvim
+      - scripts
+      - sketchybar
+      - starship
+      - tmux
+      - wezterm
+      - yabai
+
+
   tasks:
     - name: Remove existing .zshrc file
       file:
@@ -31,26 +42,14 @@
         state: link
       become: yes
 
-    - name: Create ~/.config directory if it doesn't exist
+    - name: Ensure target directory exists
       file:
         path: "{{ ansible_env.HOME }}/.config"
         state: directory
-      become: yes
 
-    - name: Remove existing files in ~/.config directory from repository
-      file:
-        path: "{{ ansible_env.HOME }}/.config/{{ item | basename }}"
-        state: absent
-      with_fileglob:
-        - "{{ playbook_dir }}/.config/*"
-      become: yes
-
-    - name: Symlink contents of .config to home directory
+    - name: Create symbolic links for directories
       file:
         src: "{{ playbook_dir }}/.config/{{ item }}"
         dest: "{{ ansible_env.HOME }}/.config/{{ item }}"
         state: link
-      with_fileglob:
-        - "{{ playbook_dir }}/.config/*"
-      become: yes
-
+      with_items: "{{ dirs_to_symlink }}"
