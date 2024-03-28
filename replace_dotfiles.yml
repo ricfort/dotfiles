@@ -29,4 +29,3 @@
         dest: "{{ ansible_env.HOME }}/.config/"
         mode: pull
       become: yes
-
