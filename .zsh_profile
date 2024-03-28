@@ -1,6 +1,5 @@
 export DOTFILES=$HOME/Code/dotfiles
-addToPathFront $HOME/.config/scripts
+path+=($HOME/.config/scripts)
 
-
-bindkey -s ^f "tmux-sessionizer\n"
+alias search="tmux-sessionizer"
 

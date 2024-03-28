@@ -22,6 +22,7 @@ source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 plugins=(zsh-autosuggestions)
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh_profile
 
 export PATH=/opt/homebrew/bin:$PATH;
 PATH="${PATH}:${HOME}/go/bin"

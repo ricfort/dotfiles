@@ -10,6 +10,13 @@
         dest: "{{ ansible_env.HOME }}/.zshrc"
       become: yes
 
+    - name: Copy .zsh_profile to home directory
+      copy:
+        src: ".zsh_profile"
+        dest: "{{ ansible_env.HOME }}/.zsh_profile"
+      become: yes
+
+
     - name: Create ~/.config directory if it doesn't exist
       file:
         path: "{{ ansible_env.HOME }}/.config"
@@ -19,7 +26,7 @@
     - name: Copy .config directory to home directory
       synchronize:
         src: ".config/"
-        dest: "{{ ansible_env.HOME }}.config/"
+        dest: "{{ ansible_env.HOME }}/.config/"
         mode: pull
       become: yes
 
