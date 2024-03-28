@@ -1,21 +1,35 @@
+
 ---
 - name: Copy dotfiles from repository to home directory
   hosts: localhost
   gather_facts: yes
 
   tasks:
-    - name: Copy .zshrc to home directory
-      copy:
-        src: ".zshrc"
+    - name: Remove existing .zshrc file
+      file:
+        path: "{{ ansible_env.HOME }}/.zshrc"
+        state: absent
+      become: yes
+
+    - name: Create symlink for .zshrc
+      file:
+        src: "{{ playbook_dir }}/.zshrc"
         dest: "{{ ansible_env.HOME }}/.zshrc"
+        state: link
       become: yes
 
-    - name: Copy .zsh_profile to home directory
-      copy:
-        src: ".zsh_profile"
+    - name: Remove existing .zsh_profile file
+      file:
+        path: "{{ ansible_env.HOME }}/.zsh_profile"
+        state: absent
+      become: yes
+
+    - name: Create symlink for .zsh_profile
+      file:
+        src: "{{ playbook_dir }}/.zsh_profile"
         dest: "{{ ansible_env.HOME }}/.zsh_profile"
+        state: link
       become: yes
-
 
     - name: Create ~/.config directory if it doesn't exist
       file:
@@ -23,9 +37,20 @@
         state: directory
       become: yes
 
-    - name: Copy .config directory to home directory
-      synchronize:
-        src: ".config/"
-        dest: "{{ ansible_env.HOME }}/.config/"
-        mode: pull
+    - name: Remove existing files in ~/.config directory from repository
+      file:
+        path: "{{ ansible_env.HOME }}/.config/{{ item | basename }}"
+        state: absent
+      with_fileglob:
+        - "{{ playbook_dir }}/.config/*"
       become: yes
+
+    - name: Symlink contents of .config to home directory
+      file:
+        src: "{{ playbook_dir }}/.config/{{ item }}"
+        dest: "{{ ansible_env.HOME }}/.config/{{ item }}"
+        state: link
+      with_fileglob:
+        - "{{ playbook_dir }}/.config/*"
+      become: yes
+
