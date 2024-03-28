@@ -1,23 +1,12 @@
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
 plugins=(zsh-autosuggestions git zsh-syntax-highlighting)
 
-
-export ZSH=/Users/ricfort/.oh-my-zsh
+# There is a little bit of junk in this file. It is still under construction with moving stuff to zsh_profile.
+export ZSH=$HOME/.oh-my-zsh
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:$HOME/Code/kotlin-language-server/server/build/install/server/bin
-source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh  # This needs to go away
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 plugins=(zsh-autosuggestions)
