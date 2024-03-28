@@ -5,6 +5,5 @@
 - link:
     ~/.zshrc: zshrc
     ~/.hyper.js: hyper.js    
-    ~/.config/nvim: nvim"
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

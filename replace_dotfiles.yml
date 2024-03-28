@@ -1,0 +1,25 @@
+---
+- name: Copy dotfiles from repository to home directory
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Copy .zshrc to home directory
+      copy:
+        src: ".zshrc"
+        dest: "{{ home }}/.zshrc"
+      become: yes
+
+    - name: Create ~/.config directory if it doesn't exist
+      file:
+        path: "{{ home }}/.config"
+        state: directory
+      become: yes
+
+    - name: Copy .config directory to home directory
+      synchronize:
+        src: ".config/"
+        dest: "{{ home }}.config/"
+        mode: pull
+      become: yes
+
