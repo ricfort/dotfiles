@@ -649,6 +649,7 @@ require('lazy').setup({
           { name = 'luasnip' },
           { name = 'path' },
           { name = 'copilot' },
+          { name = 'gopls' },
         },
       }
     end,
