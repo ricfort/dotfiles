@@ -1,6 +1,6 @@
 # My Dotfiles 🛠️
 
-Welcome to my dotfiles!
+Welcome to my dotfiles! AI Wrote this so don't judge me, judge the robot
 
 ## Window Manager: [yabai](https://github.com/koekeishiya/yabai)
 
