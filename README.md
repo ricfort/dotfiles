@@ -1,6 +1,6 @@
-# My Dotfiles Journey 🛠️
+# My Dotfiles 🛠️
 
-Welcome to my dotfiles journey!
+Welcome to my dotfiles!
 
 ## Window Manager: [yabai](https://github.com/koekeishiya/yabai)
 
