@@ -29,4 +29,4 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 eval "$(starship init zsh)"
 
-yabai --start-service
+# yabai --start-service
