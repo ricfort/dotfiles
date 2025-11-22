@@ -1,4 +1,4 @@
-# My Dotfiles 🛠️
+# My Dotfiles 🛠️ DEPRECATED
 
 Welcome to my dotfiles! AI Wrote this so don't judge me, judge the robot
 
